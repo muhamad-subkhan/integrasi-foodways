@@ -1,11 +1,11 @@
-/* eslint-disable */ 
+/* eslint-disable */
 import React, { useContext, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Navbar, Nav } from "react-bootstrap";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import GlobalButton from "./Atoms/Global-button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { LoginContext } from "../context/DataContext";
 import { CounterContext } from "../context/Data-counter";
 import Image from "../Assets/Image/User/orang.png";
@@ -14,9 +14,11 @@ import * as Icon from "react-icons/fa";
 function Header() {
   const [showLogin, setShowLogin] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
-  const [dataLogin, dispatch] = useContext(LoginContext);
+  const [state, dispatch] = useContext(LoginContext);
   const [dataCounter, setDataCounter] = useContext(CounterContext);
   // console.log(dataLogin.isLogin);
+
+  const navigate = useNavigate;
 
   function Logout() {
     dispatch({
@@ -32,7 +34,7 @@ function Header() {
       <Navbar expand="lg" sticky="top" className="navbar">
         <Container>
           <Navbar.Brand>
-            {dataLogin.isLogin ? (
+            {state.isLogin ? (
               <Link to="/Home">
                 <img src="./image/icon.png" alt="Brand" />
               </Link>
@@ -47,16 +49,16 @@ function Header() {
             id="basic-navbar-nav"
             className="justify-content-end fw-bold"
           >
-            {dataLogin.isLogin ? (
+            {state.isLogin ? (
               <Nav className="me-end">
-                {dataLogin.aslogin === "user" ? (
+                {state.user.role == "user" ? (
                   <div className="dropdown">
                     <Link
                       to="/ChartOrder"
                       className="text-black position-relative me-2"
                     >
                       <span
-                        class="position-absolute top-0 translate-middle badge rounded-pill bg-danger"
+                        className="position-absolute top-0 translate-middle badge rounded-pill bg-danger"
                         style={{ left: "70%" }}
                       >
                         {dataCounter.counter.length}

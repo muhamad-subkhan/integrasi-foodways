@@ -115,7 +115,7 @@ function Register({ show, setShow, setShowLogin }) {
                 name="role"
                 value={role}>
                 <option value="">Pilih Role</option>
-                <option value="User">As User</option>
+                <option value="user">As User</option>
                 <option value="Partner">As Partner</option>
               </Form.Select>
             </Form.Group>

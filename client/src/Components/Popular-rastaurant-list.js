@@ -6,7 +6,6 @@ export const PopularList = () => {
       <Container>
         <div className="head pt-5">
           <p className="fw-bold fs-1">Popular Restaurant</p>
-          <hr />
         </div>
         <div className="popular-list mt-4 d-md-flex flex-wrap gap-4 flex-row justify-content-lg-between justify-content-center">
           {Populars.map((item, key) => {
