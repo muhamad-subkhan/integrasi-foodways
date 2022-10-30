@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import "./Assets/styles/style.css";
 import { API, setAuthToken } from "./Components/Config/api";
@@ -20,7 +20,7 @@ import User from "./Pages/User";
 function App() {
   let navigate = useNavigate();
 
-  const [isLoading, setIsLoading] = useState(true)
+  // const [isLoading, setIsLoading] = useState(true)
   const [state, dispatch] = useContext(LoginContext);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ function App() {
       setAuthToken(localStorage.token);
     }
 
-    if (state.isLogin === false && isLoading) {
+    if (state.isLogin === false) {
       navigate("/Admin");
     } else {
       if (state.user.role === "patner") {
@@ -60,11 +60,11 @@ function App() {
         type: "USER_SUCCESS",
         payload,
       });
-      setIsLoading(false)
+      // setIsLoading(false)
       // console.log(isLoading, "awaw");
     } catch (error) {
       console.log("contohin", error);
-      setIsLoading(false)
+      // setIsLoading(false)
       // console.log(isLoading, "lala");
     }
   };
