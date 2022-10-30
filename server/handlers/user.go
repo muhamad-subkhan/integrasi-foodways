@@ -92,6 +92,9 @@ func (h *handlerUser) CreateUser(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(err.Error())
 	 }
 
+
+
+
 	 w.WriteHeader(http.StatusOK)
 	 response := dto.SuccessResult{Code: http.StatusOK, Data: convertResponse(data), Status: "succes"}
 	 json.NewEncoder(w).Encode(response)

@@ -1,11 +1,11 @@
 package middleware
 
 import (
-  "context"
-  "encoding/json"
-  "fmt"
-  "io/ioutil"
-  "net/http"
+	"context"
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
+	"net/http"
 )
 
 func UploadFile(next http.HandlerFunc) http.HandlerFunc {
