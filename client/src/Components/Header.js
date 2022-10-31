@@ -1,11 +1,10 @@
-/* eslint-disable */
 import React, { useContext, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Navbar, Nav } from "react-bootstrap";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import GlobalButton from "./Atoms/Global-button";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { LoginContext } from "../context/DataContext";
 import { CounterContext } from "../context/Data-counter";
 import Image from "../Assets/Image/User/orang.png";
@@ -15,10 +14,10 @@ function Header() {
   const [showLogin, setShowLogin] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
   const [state, dispatch] = useContext(LoginContext);
-  const [dataCounter, setDataCounter] = useContext(CounterContext);
+  const [dataCounter] = useContext(CounterContext);
   // console.log(dataLogin.isLogin);
 
-  const navigate = useNavigate;
+  // const navigate = useNavigate;
 
   function Logout() {
     dispatch({
@@ -51,7 +50,7 @@ function Header() {
           >
             {state.isLogin ? (
               <Nav className="me-end">
-                {state.user.role == "user" ? (
+              {state.user.role === "user" ? (
                   <div className="dropdown">
                     <Link
                       to="/ChartOrder"

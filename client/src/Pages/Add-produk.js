@@ -10,7 +10,7 @@ function AddProduk() {
 
   let navigate = useNavigate();
 
-  const [product, setProduct] = useState([])
+  // const [product, setProduct] = useState([])
 
   const [preview, setPreview] = useState(null); //For image preview
   // const [product, setProduct] = useState([])
@@ -20,14 +20,7 @@ function AddProduk() {
     price: "",
   }); //Store product 
 
-  const getProduct =  async () => {
-    try {
-      const response = await API.get('/products');
-      setProduct(response.data.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  
 
   const handleChange = (e) => {
     setForm({
@@ -46,34 +39,34 @@ function AddProduk() {
     try {
       e.preventDefault();
 
-      // Configuration
-      const config = {
-        headers: {
-          "Content-type": "multipart/form-data",
-          accept: "application/json"
-        },
-      };
+      // // Configuration
+      // const config = {
+      //   headers: {
+      //     "Content-type": "multipart/form-data",
+      //     Accept: "application/json",
+      //   },
+      // };
 
       // Store data with FormData as object
       const formData = new FormData();
-      formData.set('image', form.image[0].name);
+      formData.set('image', form.image[0], form.image[0].name);
       formData.set('title', form.title);
       formData.set('price', form.price);
 
       console.log(formData);
 
       // Insert product data
-      const response = await API.post("/product", formData, config);
-      console.log(response.data);
+      const response = await API.post("/product", formData);
+      console.log("ini respone",response.data);
 
       navigate('/Admin');
     } catch (error) {
-      console.log(error);
+      console.log("erornya",error);
     }
   });
 
   useEffect(() => {
-    getProduct();
+    // getProduct();
   }, []);
 
   return (

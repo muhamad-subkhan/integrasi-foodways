@@ -29,7 +29,7 @@ function App() {
     }
 
     if (state.isLogin === false) {
-      navigate("/Admin");
+      navigate("/");
     } else {
       if (state.user.role === "patner") {
         navigate("/Admin");

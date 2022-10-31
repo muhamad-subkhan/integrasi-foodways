@@ -1,6 +1,8 @@
+/* eslint-disable no-console, no-control-regex*/
 import React from "react";
+import "bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css";
-import * as Icon from "react-icons/fa";
+// import * as Icon from "react-icons/fa";
 import "../Assets/styles/style.css";
 import { Container } from "react-bootstrap";
 
@@ -9,65 +11,58 @@ function Incometransaction() {
     <>
       <Container>
         <div className="income mt-5">
-          <p className="fw-bold fs-1">Income Transaction</p>
+          <h1 className="fw-bold">Income Transaction</h1>
           <table className="table">
+            <thead>
             <tr className="bg-secondary text-center">
-              <th>No</th>
-              <th>Name</th>
-              <th>Address</th>
-              <th>Products Order</th>
-              <th>Status</th>
-              <th>Action</th>
+              <th className="border border-dark">No</th>
+              <th className="border border-dark">Name</th>
+              <th className="border border-dark">Address</th>
+              <th className="border border-dark">Products Order</th>
+              <th className="border border-dark">Status</th>
             </tr>
-            <tr>
-              <td>1</td>
-              <td>Sugeng No Pants</td>
-              <td>Cileungsi</td>
-              <td>Pkaket Geprek, Paket ke..</td>
-              <td className="text-warning">Waiting Approve</td>
-              <td>
-                <div className="d-md-flex gap-2">
-                  <button className="btn btn-danger w-100 border-0">
-                    Cancle
-                  </button>
-                  <button className="btn btn-success w-100 border-0">
-                    Approve
-                  </button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Haris Gams</td>
-              <td>Serang </td>
-              <td>Pkaket Geprek, Paket ke..</td>
-              <td className="text-success">Success</td>
-              <td className="text-center">
-                <span>
-                  <Icon.FaCheckCircle className="text-success" />
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Aziz Union</td>
-              <td>Bekasi</td>
-              <td>Pkaket Geprek, Paket ke..</td>
-              <td className="text-danger">Cancel</td>
-              <td className="fw-bold text-center text-danger">X</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Lae Tanjung Balai</td>
-              <td>Tanjung Balai</td>
-              <td>Pkaket Geprek, Paket ke..</td>
-              <td className="text-primary">On The Way</td>
-              <td className="text-center">
-                <span>
-                  <Icon.FaCheckCircle className="text-success" />
-                </span>
-              </td>
-            </tr>
+            </thead>
+
+            <tbody>
+              <tr className="text-center">
+              <td className="border border-dark">1</td>
+              <td className="border border-dark">Sugeng No Pants</td>
+              <td className="border border-dark">Cileungsi</td>
+              <td className="border border-dark">Pkaket Geprek, Paket ke..</td>
+              <td className="border border-dark text-warning">Waiting Approve</td>
+              </tr>
+            </tbody>
+            
+            <tbody>
+              <tr className="text-center">
+              <td className="border border-dark">2</td>
+              <td className="border border-dark">Haris Gams</td>
+              <td className="border border-dark">Serang </td>
+              <td className="border border-dark">Pkaket Geprek, Paket ke..</td>
+              <td className="border border-dark text-success">Success</td>
+              </tr>
+            </tbody>
+
+            <tbody>
+              <tr className="text-center">
+              <td className="border border-dark">3</td>
+              <td className="border border-dark">Aziz Union</td>
+              <td className="border border-dark">Bekasi</td>
+              <td className="border border-dark">Pkaket Geprek, Paket ke..</td>
+              <td className="border border-dark text-danger">Cancel</td>
+              </tr>
+            </tbody>
+
+            <tbody>
+              <tr className="text-center">
+              <td className="border border-dark">4</td>
+              <td className="border border-dark">Lae Tanjung Balai</td>
+              <td className="border border-dark">Tanjung Balai</td>
+              <td className="border border-dark">Pkaket Geprek, Paket ke..</td>
+              <td className="border border-dark text-primary">On The Way</td>
+              </tr>
+            </tbody>
+
           </table>
         </div>
       </Container>
