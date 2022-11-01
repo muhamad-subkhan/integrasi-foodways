@@ -13,3 +13,13 @@ path intellisense
 
 cart => id user dan produk id (bisa nyimpen banyak)
 transaksi => id cart dan id user
+
+
+order struct{
+id
+userid
+user
+productId
+product
+qty
+}

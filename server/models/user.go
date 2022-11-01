@@ -27,7 +27,6 @@ type UserOrderResponse struct {
 	Phone    string `json:"phone"`
 	Location string `json:"location"`
 }
-
 func (UsersProfileResponse) TableName() string {
 	return "users"
 }

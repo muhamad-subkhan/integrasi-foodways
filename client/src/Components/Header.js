@@ -105,6 +105,11 @@ function Header() {
                           <Icon.FaHamburger className="me-2" /> Add Product
                         </Link>{" "}
                       </li>
+                      <li>
+                        <Link className="dropdown-item" to="/IncomeTransaction">
+                          <Icon.FaDollarSign className="me-2" /> transaction
+                        </Link>{" "}
+                      </li>
                       <li
                         className="dropdown-item"
                         onClick={() => Logout()}
