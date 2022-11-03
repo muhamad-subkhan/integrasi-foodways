@@ -14,7 +14,7 @@ func ProductRoutes(r *mux.Router) {
 	ProductsRepository := repositories.RepositoriesProduct(mysql.DB)
 	h := handlers.HandlerProduct(ProductsRepository)
   
-	r.HandleFunc("/products", middleware.Auth(h.FindProducts)).Methods("GET") //get all
+	r.HandleFunc("/products", h.FindProducts).Methods("GET") //get all
 	r.HandleFunc("/products/{id}", middleware.Auth(h.GetProduct)).Methods("GET") //get by id
 	r.HandleFunc("/product/{id}", middleware.Auth(h.ProductDetail)).Methods("GET") //get detail by id
 	r.HandleFunc("/product", middleware.Auth(middleware.UploadFile(h.CreateProduct))).Methods("POST") //Create
