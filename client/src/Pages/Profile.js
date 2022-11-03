@@ -7,18 +7,27 @@ import ProfileImage from "../Assets/Image/User/Rectangle 12.png";
 import { LoginContext } from "../context/DataContext";
 // import { Users } from '../Data-Dummy/Users';
 import { Link } from "react-router-dom";
+import { useQuery } from "react-query";
+
 // console.log(WaysFood);
 
 function Profile() {
-  const [dataLogin, dispatch] = useContext(LoginContext);
+  const [state] = useContext(LoginContext);
   // const DataUser = Users.find((person) => person.email === dataLogin.email);
+
+  let { data: profile } = useQuery("profileChache", async () => {
+    const response = await API.get("/users/{id}")
+    console.log("profile",response);
+    return response.data.data
+  })
+
 
   return (
     <>
       <Container>
         <div className="profile d-md-flex mt-5 gap-5">
           <div className="left w-100">
-            {dataLogin.aslogin === "partner" ? (
+            {state.user.role === "partner" ? (
               <p className="fw-bold fs-3">Profile Partner</p>
             ) : (
               <p className="fw-bold fs-3">My Profile</p>
@@ -31,7 +40,7 @@ function Profile() {
               <div className="detail">
                 <div className="name">
                   <p>Full Name</p>
-                  <span>Name</span>
+                  <span>{profile?.fullName}</span>
                 </div>
                 <div className="email">
                   <p>Email</p>

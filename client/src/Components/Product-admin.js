@@ -1,13 +1,11 @@
 import React, { useContext } from "react";
 import { Button, Card, Container } from "react-bootstrap";
-import { DetailRestaurant } from "../Data-Dummy/Detail-restaurant";
 import { CounterContext } from "../context/Data-counter";
+import { DetailRestaurant } from "../Data-Dummy/Detail-restaurant";
 
 
-function DetailRestaurantList() {
+function ProductAdmin() {
   const [dataCounter, setDataCounter] = useContext(CounterContext);
-  
-
 
   function AddUser(item) {
     let newData = dataCounter.counter;
@@ -59,4 +57,4 @@ function DetailRestaurantList() {
   );
 }
 
-export default DetailRestaurantList;
+export default ProductAdmin;

@@ -18,7 +18,7 @@ function Header() {
   const [dataCounter, setDataCounter] = useContext(CounterContext);
   // console.log(dataLogin.isLogin);
 
-  const navigate = useNavigate;
+  // const navigate = useNavigate;
 
   function Logout() {
     dispatch({

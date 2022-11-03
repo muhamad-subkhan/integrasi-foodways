@@ -44,6 +44,7 @@ function Login({ show, setShow, setShowRegister }) {
         </Alert>
       )
       setMessage(alert)
+      setShow(false)
       
       dispatch({
         type: "LOGIN_SUCCESS",
